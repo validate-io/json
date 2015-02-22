@@ -59,7 +59,8 @@ describe( 'validate.io-json', function tests() {
 			function(){},
 			[],
 			{},
-			'{a":5}'
+			'{a":5}',
+			new String( '{"a":5}' )
 		];
 
 		for ( var i = 0; i < values.length; i++ ) {

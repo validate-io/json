@@ -36,9 +36,7 @@
   "bugs": {
     "url": "https://github.com/validate-io/json/issues"
   },
-  "dependencies": {
-    "validate.io-string": "^1.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "1.x.x",
     "mocha": "1.x.x",
