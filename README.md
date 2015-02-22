@@ -38,7 +38,7 @@ var bool = isJSON( value );
 	-	`'<number>'`; e.g., `'5'`
 	-	`'<boolean>'`; e.g., `'true'`
 	-	`'null'`
-*	uses `JSON.parse` inside a `try/catch`. Hence, this method cannot be optimized by the compiler during runtime. Nevertheless, using this `function` is better than embedding a `try/catch` within a larger `function` which could be optimized in the absence of the `try/catch`.
+*	uses `JSON.parse` inside a `try/catch`. Hence, this method cannot be optimized by the compiler during runtime. Nevertheless, using this `function` is better than embedding a `try/catch` within a larger `function` which could be optimized in the absence of a `try/catch`.
 
 
 
