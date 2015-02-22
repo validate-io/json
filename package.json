@@ -26,12 +26,19 @@
     "validate.io",
     "validate",
     "validation",
-    "validator"
+    "validator",
+    "json",
+    "string",
+    "parseable",
+    "is",
+    "isjson"
   ],
   "bugs": {
     "url": "https://github.com/validate-io/json/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "validate.io-string": "^1.0.2"
+  },
   "devDependencies": {
     "chai": "1.x.x",
     "mocha": "1.x.x",

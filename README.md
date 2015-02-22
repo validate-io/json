@@ -1,4 +1,4 @@
-json
+JSON
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -17,18 +17,41 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'validate.io-json' );
+var isJSON = require( 'validate.io-json' );
 ```
 
-#### foo( value )
+#### isJSON( value )
 
-What does this function do?
+Validates if a `value` is a parseable JSON `string`.
+
+``` javascript
+var value = '{"a":5}';
+
+var bool = isJSON( value );
+// returns true
+```
+
+## Notes
+
+*	first validates that the input `value` is a `string`. For all other input types, the method returns `false`.
+*	validates that the `string` begins with either `[` or `{` and ends with a corresponding `]` or `}`, respectively. Hence, the method will return `false` for the following `strings`, despite `JSON.parse` accepting their input:
+	-	`'<number>'`; e.g., `'5'`
+	-	`'<boolean>'`; e.g., `'true'`
+	-	`'null'`
+*	uses `JSON.parse` inside a `try/catch`. Hence, this method cannot be optimized during runtime by the compiler. Nevertheless, using this `function` is better than embedding a `try/catch` within a larger `function` which could be optimized in the absence of the `try/catch`.
+
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'validate.io-json' );
+var isJSON = require( 'validate.io-json' );
+
+console.log( isJSON( '{"a":5}' ) );
+// returns true
+
+console.log( isJSON( '{a":5}' ) );
+// returns false
 ```
 
 To run the example code from the top-level application directory,
