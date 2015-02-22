@@ -33,12 +33,12 @@ var bool = isJSON( value );
 
 ## Notes
 
-*	first validates that the input `value` is a `string`. For all other input types, the method returns `false`.
+*	first validates that the input `value` is a `string` literal. For all other inputs, the method returns `false`.
 *	validates that the `string` begins with either `[` or `{` and ends with a corresponding `]` or `}`, respectively. Hence, the method will return `false` for the following `strings`, despite `JSON.parse` accepting their input:
 	-	`'<number>'`; e.g., `'5'`
 	-	`'<boolean>'`; e.g., `'true'`
 	-	`'null'`
-*	uses `JSON.parse` inside a `try/catch`. Hence, this method cannot be optimized during runtime by the compiler. Nevertheless, using this `function` is better than embedding a `try/catch` within a larger `function` which could be optimized in the absence of the `try/catch`.
+*	uses `JSON.parse` inside a `try/catch`. Hence, this method cannot be optimized during by the compiler runtime. Nevertheless, using this `function` is better than embedding a `try/catch` within a larger `function` which could be optimized in the absence of the `try/catch`.
 
 
 
